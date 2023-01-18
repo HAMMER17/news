@@ -9,8 +9,9 @@
   margin: 10px;
   background: var(--bg);
   color: var(--color);
-  box-shadow: 10px 10px 55px var(--color);
-  /* border: 1px solid var(--color); */
+  box-shadow: 5px 5px 55px var(--color);
+  border: 3px solid var(--color);
+  border-radius: 15px;
 }
 
 .card h6 {
