@@ -4,7 +4,7 @@ import Time from './Time'
 import axios from 'axios'
 import '../style/card.css'
 
-export default function Card({ id }) {
+export default function Card({ id, index }) {
   const [post, setPost] = useState({})
   const urlBase = 'https://hacker-news.firebaseio.com/v0/'
   const urlItems = `${urlBase}item/`
@@ -16,7 +16,7 @@ export default function Card({ id }) {
 
   return (
     <div className='card'>
-
+      <p>{index + 1}</p>
       <h2>{post.title}</h2>
       <h6><span>By: </span>{post.by}</h6>
       <h6>{post.text}</h6>
