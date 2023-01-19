@@ -17,9 +17,10 @@ export default function Home() {
       <input className='home_input' type="text" placeholder='Search...'
         onChange={(e) => setSearch(e.target.value)} />
       <div className='home'>
-        {mokka.filter(elem => elem.product.includes(search)).map(elem => {
-          return <Mokka key={elem.id} id={elem.id} title={elem.product} text={elem.text}
-            avatar={elem.avatar} />
+        {mokka.filter(elem => elem.name.includes(search)).map(elem => {
+          return <Mokka key={elem.id} data={elem}
+          //  id={elem.id} title={elem.product} text={elem.text}avatar={elem.avatar}
+          />
         })}
       </div>
     </div>
