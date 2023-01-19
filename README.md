@@ -5,4 +5,5 @@
 # Hi there, I'm [Hammer17](https://daniilshat.ru/) ![](https://github.com/blackcater/blackcater/raw/main/images/Hi.gif) 
 ### IT news writer from Russia 🇷🇺
 ### HackerNews Api in React !!!
-## MokkaAPI axios
+## MokkaAPI 
+[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=First+line+of+text;Second+line+of+text)](https://git.io/typing-svg)
