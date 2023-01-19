@@ -11,11 +11,16 @@ export default function User() {
         <img src={data.avatar} alt="user" />
       </div>
       <div className="user_right">
-        <h1>{data.name}</h1>
+        <div className="user_img">
+          <h1>{data.name}</h1>
+          <img src={data.product} alt="img" />
+        </div>
+
         <h2><span>Phone: </span>{data.phone}</h2>
         <h2><span>Email: </span>{data.email}</h2>
         <h3><span>City: </span>{data.city}</h3>
         <p>{data.text}</p>
+
       </div>
     </div>
   )
