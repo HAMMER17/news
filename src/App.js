@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import './index.css';
 import Home from './pages/Home';
 import Post from './pages/Post';
+import User from './pages/User';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/post' element={<Post />} />
-
+        <Route path='/:id' element={<User />} />
       </Routes>
     </div>
   );
