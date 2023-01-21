@@ -29,15 +29,18 @@ export default function Post() {
   const firstNews = lastNews - end
   const itemNews = story.slice(firstNews, lastNews)
 
+
   const getPaginate = item => setBegin(item)
   return (
     <div className='post_container'>
       <h1>New Story</h1>
       {/* <input type="text" onChange={(e) => setSearch(e.target.value)} /> */}
       {itemNews.map((elem, index) => {
-        return <Card key={elem} id={elem} index={index + 1} />
+        return <Card key={elem} id={elem} index={index + firstNews} />
       })}
-      <Panagation allNews={story.length} counterNews={end} getPaginate={getPaginate} />
+      <Panagation allNews={story.length} counterNews={end} getPaginate={getPaginate}
+        props={begin}
+      />
     </div>
   )
 }

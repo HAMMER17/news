@@ -24,6 +24,8 @@
 .card h2 {
   margin: 10px;
   font-family: 'Playfair Display', serif;
+  border-bottom: 1px solid var(--color);
+  cursor: pointer;
 }
 
 .card p {
@@ -33,4 +35,8 @@
 .card h3 {
   margin: 10px;
   font-family: 'Oswald', sans-serif;
+}
+
+.card span {
+  color: var(--bg-blue);
 }
