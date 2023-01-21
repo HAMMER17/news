@@ -4,7 +4,7 @@ import '../style/user.css'
 
 export default function User() {
   const data = useSelector(state => state.user.userCard)
-  console.log(data)
+
   return (
     <div className='user_container'>
       <div className="user_left">

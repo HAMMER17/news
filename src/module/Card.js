@@ -16,12 +16,13 @@ export default function Card({ id, index }) {
 
   return (
     <div className='card'>
-      <p>{index + 1}</p>
+      <p>{index}</p>
       <h2>{post.title}</h2>
       <h6><span>By: </span>{post.by}</h6>
       <h6>{post.text}</h6>
       <a href={post.url}><p>{post.url}</p></a>
       <h3><span>News Updated: </span>{Time(post.time)} <span> ago</span></h3>
+      <p>{post.score}<span> comments</span></p>
     </div>
   )
 }

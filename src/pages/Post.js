@@ -3,8 +3,11 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import '../style/post.css'
 import Card from '../module/Card'
+import Panagation from '../module/Panagation'
 
 export default function Post() {
+  const [begin, setBegin] = useState(1)
+  const [end] = useState(20)
 
   const urlBase = 'https://hacker-news.firebaseio.com/v0/'
   // const urlItems = `${urlBase}item/${search}`
@@ -22,15 +25,19 @@ export default function Post() {
     getPost()
 
   }, [])
+  const lastNews = begin * end
+  const firstNews = lastNews - end
+  const itemNews = story.slice(firstNews, lastNews)
 
+  const getPaginate = item => setBegin(item)
   return (
     <div className='post_container'>
       <h1>New Story</h1>
       {/* <input type="text" onChange={(e) => setSearch(e.target.value)} /> */}
-      {story.slice(0, 30).map((elem, index) => {
-        return <Card key={elem} id={elem} index={index} />
+      {itemNews.map((elem, index) => {
+        return <Card key={elem} id={elem} index={index + 1} />
       })}
-
+      <Panagation allNews={story.length} counterNews={end} getPaginate={getPaginate} />
     </div>
   )
 }
