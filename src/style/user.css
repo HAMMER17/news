@@ -56,3 +56,19 @@
   height: 200px;
   border-radius: 10px;
 }
+
+@media (max-width:500px) {
+  .user_container {
+    grid-template-columns: 1fr;
+  }
+
+  .user_left img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .user_img img {
+    width: 100px;
+    height: 100px;
+  }
+}

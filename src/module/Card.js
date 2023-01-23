@@ -22,7 +22,8 @@ export default function Card({ id, index }) {
       <h6>{post.text}</h6>
       {/* <a href={post.url}><p>{post.url}</p></a> */}
       <h3><span>News Updated: </span>{Time(post.time)} <span> ago</span></h3>
-      <p>{post.score}<span> comments</span></p>
+      <p>{post.score}<span> score</span></p>
+
     </div>
   )
 }

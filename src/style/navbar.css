@@ -48,7 +48,8 @@ a {
 
 @media screen and (max-width: 420px) {
   .navbar {
-    max-width: auto;
+    max-width: 90%;
+    /* justify-content: space-around; */
   }
 
   .navbar-li {
