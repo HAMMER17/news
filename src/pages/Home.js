@@ -13,7 +13,7 @@ export default function Home() {
   }, [])
   return (
     <div className='home_container'>
-      <h1 style={{ textAlign: 'center', marginTop: 80 }}>Home</h1>
+      <h1 style={{ textAlign: 'center', marginTop: 80 }}>Users</h1>
       <input className='home_input' type="text" placeholder='Search...'
         onChange={(e) => setSearch(e.target.value)} />
       <div className='home'>
