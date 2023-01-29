@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import './index.css';
+import Countries from './pages/Countries';
 import Home from './pages/Home';
 import Post from './pages/Post';
 import User from './pages/User';
@@ -22,6 +23,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/post' element={<Post />} />
         <Route path='/:id' element={<User />} />
+        <Route path='/countries' element={<Countries />} />
       </Routes>
     </div>
   );

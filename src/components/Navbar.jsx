@@ -14,6 +14,7 @@ const Navbar = ({ icon, changeIcon }) => {
 
       <NavLink to={'/'} end>Home</NavLink>
       <NavLink to={'/post'}>News</NavLink>
+      <NavLink to={'/countries'}>Countries</NavLink>
 
       {icon ? <span className='navbar-icon'><BsSunFill onClick={changeIcon} /></span> :
         <span className='navbar-icon'><IoCloudyNight onClick={changeIcon} /></span>}
