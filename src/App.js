@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import './index.css';
 import Countries from './pages/Countries';
 import Home from './pages/Home';
+import PageCountry from './pages/PageCountry';
 import Post from './pages/Post';
 import User from './pages/User';
 
@@ -24,6 +25,7 @@ function App() {
         <Route path='/post' element={<Post />} />
         <Route path='/:id' element={<User />} />
         <Route path='/countries' element={<Countries />} />
+        <Route path='/country/:name' element={<PageCountry />} />
       </Routes>
     </div>
   );

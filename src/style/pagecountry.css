@@ -1,0 +1,89 @@
+.page {
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  background: var(--bg);
+  color: var(--color);
+  /* margin-top: 80px; */
+  height: 100vh;
+}
+
+.page h1 {
+  font-family: 'Playfair Display', serif;
+}
+
+.page_left {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* margin-top: 80px; */
+}
+
+.page_left button {
+  width: 200px;
+  height: 40px;
+  margin-top: 70px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.page_left button:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+  background: var(--bg-blue);
+  color: var(--bg-orange);
+}
+
+.page_right {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* margin-top: 80px; */
+}
+
+.page_right p {
+  width: 80%;
+  margin: 20px;
+  font-family: 'Oswald', serif;
+}
+
+.page_left img {
+  width: 400px;
+  height: 250px;
+  margin: 50px;
+  border: 1px solid var(--color);
+}
+
+.page_left h2 {
+  font-family: 'Playfair Display', serif;
+  margin: 10px;
+}
+
+.page_right h3 {
+  margin: 10px;
+  font-family: 'Playfair Display', serif;
+}
+
+.page_country {
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  text-align: center;
+}
+
+.page_country h5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 100%;
+  border-radius: 10px;
+  margin: 10px;
+  background: var(--bg-blue);
+  color: var(--bg);
+  cursor: pointer;
+}

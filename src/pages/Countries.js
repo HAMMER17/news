@@ -5,12 +5,10 @@ import { Input } from '../components/Input'
 import Country from '../module/Country'
 
 export default function Countries() {
-  const [country, setCountry] = useState([])
-  const [text, setText] = useState('')
-  const [value, setValue] = useState('')
-  const [items, setItems] = useState([])
 
-  useEffect(() => {
+  const [country, setCountry] = useState([])
+
+  const allCountries = () => {
     try {
       axios.get('https://restcountries.com/v3.1/all')
         .then(({ data }) => {
@@ -19,31 +17,37 @@ export default function Countries() {
     } catch (err) {
       console.log(err)
     }
-  }, [])
+  }
 
-  const dataCountry = () => {
-    // let s = [];
-    if (value) {
-      setItems(country.filter(el => el.region.includes(value)))
+  const dataInput = (nameCountry) => {
+    try {
+      axios.get(`https://restcountries.com/v3.1/name/${nameCountry}`)
+        .then(({ data }) => setCountry(data))
+    } catch (err) {
+      console.log(err)
     }
-    if (text) {
-      setItems(country.filter(el => el.name.common.includes(text)))
-    } else
-      setItems(country)
+  }
+  const dataSelect = (nameRegion) => {
+    try {
+      axios.get(`https://restcountries.com/v3.1/region/${nameRegion}`)
+        .then(({ data }) => setCountry(data))
+    } catch (err) {
+      console.log(err)
+    }
   }
   useEffect(() => {
-    dataCountry()
+    allCountries()
     // eslint-disable-next-line
-  }, [text, value])
+  }, [])
 
-  console.log(items)
+  console.log(country)
   return (
     <>
-      <Input setText={setText} text={text} setValue={setValue} value={value} />
+      <Input onSearch={dataInput} onSelect={dataSelect} />
 
       <div className='country_container'>
 
-        {items?.map((elem, id) => {
+        {country.map((elem, id) => {
           return <Country data={elem} key={id} />
         })}
 

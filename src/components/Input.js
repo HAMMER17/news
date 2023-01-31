@@ -1,15 +1,29 @@
 import React from 'react'
+import { useState } from 'react'
 import '../style/input.css'
 
 
-export const Input = ({ setText, text, setValue, value }) => {
+export const Input = ({ onSearch, onSelect }) => {
+  const [text, setText] = useState('')
 
-  console.log(value)
+  const getText = (e) => {
+    e.preventDefault()
+    onSearch(text)
+  }
+  const getValue = (e) => {
+    e.preventDefault()
+    const optionName = e.target.value
+    onSelect(optionName)
+  }
+
   return (
     <div className='input'>
-      <input type="text" placeholder='Search...'
-        onChange={(e) => setText(e.target.value)} value={text} />
-      <select className='select' onChange={(e) => setValue(e.target.value)}>
+      <form onSubmit={getText}>
+        <input type="text" placeholder='Search...'
+          onChange={(e) => setText(e.target.value)} value={text} />
+      </form>
+
+      <select className='select' onChange={getValue}>
         <option value="Filter"> --Region-- </option>
         <option value="Africa">Africa</option>
         <option value="Americas">Americas</option>
