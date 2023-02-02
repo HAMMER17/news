@@ -4,6 +4,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import { ClockLoader } from 'react-spinners'
 import '../style/pagecountry.css'
 
 export default function PageCountry() {
@@ -22,7 +23,6 @@ export default function PageCountry() {
     // eslint-disable-next-line
   }, [params])
   // console.log(params)
-  const borders = data.map(el => el.borders)
 
   useEffect(() => {
     axios.get(`https://restcountries.com/v2/name/${params.name}`)
@@ -30,17 +30,23 @@ export default function PageCountry() {
   }, [params])
 
   useEffect(() => {
-    setLoading(true)
+    const borders = data.map(el => el.borders)
     axios.get(`https://restcountries.com/v3.1/alpha?codes=${borders}`)
-      .then(({ data }) => setCountry(data))
+      .then((data) => setCountry(data.data))
       .catch((err) => console.log(err + ' borders'))
-    setLoading(false)
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000);
   }, [data])
+
+
 
   const array = current.map((el, i) => (<div key={i} className='current'>
     <h3>Currencies</h3>
     <h4><span>Name: </span>{el.currencies[0].name}</h4>
+    <h4><span>Code: </span>{el.currencies[0].code}</h4>
     <h4><span>Symbol: </span>{el.currencies[0].symbol}</h4>
+
   </div>))
 
   return (
@@ -71,13 +77,15 @@ export default function PageCountry() {
               Inventore id unde blanditiis eaque sapiente nostrum molestias
               rem dolore quibusdam quas eius deleniti accusantium iusto ullam,
               voluptates quidem vel nam ducimus!</p>
+            <h3 className='page_h3'>borders</h3>
             <div className="page_country">
-              {loading ? (<h1>Loading...</h1>) : country.map((el) => {
-                return <Link key={el.name.common} to={`/country/${el.name.common}`}>
-                  <h5 key={el.name.common}>{el.name.common}</h5>
-                </Link>
+              {loading ? (<ClockLoader color="#2407ef" />) :
+                country.map((el) => {
+                  return <Link key={el.name.common} to={`/country/${el.name.common}`}>
+                    <h5 key={el.name.common}>{el.name.common}</h5>
+                  </Link>
 
-              })}
+                })}
             </div>
 
           </div>

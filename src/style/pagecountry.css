@@ -58,7 +58,7 @@
 
 .page_right p {
   width: 80%;
-  margin: 20px;
+  margin: 10px;
   font-family: 'Oswald', serif;
 }
 
@@ -113,6 +113,7 @@
 
 .current span {
   color: var(--bg-blue);
+  margin: 10px;
 }
 
 .current h3 {
@@ -120,7 +121,12 @@
   color: var(--bg-orange);
 }
 
+.page_h3 {
+  color: var(--bg-orange);
+}
+
 .current h4 {
+  margin: 5px;
   /* font-family: 'Indie Flower', cursive; */
   font-size: 20px;
 }
