@@ -7,6 +7,7 @@
 
 .page_container {
   display: flex;
+
   /* flex-direction: column; */
   align-items: center;
 
@@ -54,6 +55,7 @@
   height: 100%;
   margin: 20px;
   margin-top: 80px;
+
 }
 
 .page_right p {
@@ -82,6 +84,7 @@
 
 .page_country {
   display: flex;
+  flex-wrap: wrap;
   /* justify-content: center;
   align-items: center; */
   text-align: center;
@@ -104,11 +107,12 @@
   width: 90%;
   height: 100%;
   border-radius: 10px;
-  margin: 10px;
+  margin: 5px;
   background: var(--bg-blue);
   color: var(--bg);
   cursor: pointer;
   padding: 5px;
+
 }
 
 .current span {

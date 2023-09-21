@@ -84,7 +84,6 @@ export default function PageCountry() {
                   return <Link key={el.name.common} to={`/country/${el.name.common}`}>
                     <h5 key={el.name.common}>{el.name.common}</h5>
                   </Link>
-
                 })}
             </div>
 
